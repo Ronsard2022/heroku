@@ -1,0 +1,636 @@
+:root {
+    --black: #121212;
+    --yellow:#F5AF13;
+    --blue: #4ed6cd;
+    --red: #C1272D;
+    --shaded-red:#002DB3;
+    --white: #FFF;
+    --tWhite:rgba(255,255,255,0.8);
+    --grey:#707070;
+    box-sizing: border-box;
+}
+*{
+    box-sizing: inherit;
+}
+body {
+    background-color: #121212;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--white);
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+/* 
+.accessibility{
+    position: absolute;
+    left: -15000px;
+}*/
+
+/* 1. WELCOME HOME PAGE*/
+
+#mainHeader.home{
+    /*background-color: var(--red);*/
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: grid;
+    grid-template-columns: 1fr 40px;/*utiliser la propriété css du module grid = constitution des largeurs de chaque colonne, 2 ici : 
+    1ère col : 1 fraction ie = le reste de la largeur selon la largeur de l'écran 
+    2ème col : 40px de largeur pour le menu toggle hamburger*/
+}
+#mainHeader.home > h1{
+    margin: 0;
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 1em;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+#mainHeader.home #mainNav{
+    position: absolute;
+    /*background-color: var(--red);*/
+    width: 100%;
+    top: 15px;
+    padding-bottom: 10px;
+    display: none;
+}
+#mainHeader.home #mainNav ul{/* formatage de la boîte de la liste des libellés de la barre de menu */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: column;/*propriété qui permet d'afficher les éléments flex en colonne, mise en page nécessaire pour les smartphones qu'il faut adapter via la variante affichage en ligne pour les écrans plus grands à spécifier dans les meta queries flex-direction: row...  */
+}
+#mainHeader.home #mainNav a {/* formatage du texte des libellés du menu */
+    color: var(--white);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7em;
+    padding-left: 20px;/* pour avancer le bloc menu de 10 px devant celui du logo qui fait 80px et penser adapter l'affichage pour les devices + grand dans meta queries*/
+}
+#mainHeader.home #mainNav a:hover{
+    color: var(--shaded-red);
+}
+#mainHeader.home #menuToggle{
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    height: 50px;
+}
+
+#mainLogo {/*box dans laquelle le mainlogo.home est intégré*/
+    width: 100%;
+    height: 150px;
+    top: 75px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;/*placer au centre de la fenêtre*/
+    position: relative;
+    padding: 0 15px 0 15px;
+}
+#mainLogo.home #mainLogoDiv{/*logo home au centre*/
+    width: 250px;
+    z-index: 1000;
+    position: relative;
+}
+#mainIntro {/*box dans laquelle le mainIntro est intégré*/
+    width: 100%;
+    height: 150px;
+    top: 30px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;/*placer au centre de la fenêtre*/
+    position: relative;
+    padding: 0 15px 0 15px;
+}
+#mainIntro.home #texte_intro{/*div avec h1 et p du texte d'intro Film culte sous le logo*/
+    width: 400px;
+    z-index: 1000;
+    position: relative;
+}
+#mainIntro.home #texte_intro h1{/* texte d'intro "Un film culte..." sous le logo*/
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--yellow);
+    font-size: 1.8em ;
+    margin: 10px 50px;
+    text-align: center;
+}
+#mainIntro.home #texte_intro p{
+    margin: 10px 0;
+    font-size: 1em;
+    color: #FFF;
+    text-align: justify;
+    margin: 10px 30px;
+}
+
+#carrou_image {/*box dans laquelle l'image du carrousel est intégré*/
+    width: 100%;
+    height: 150px;
+    top: 120px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;/*placer au centre de la fenêtre*/
+    position: relative;
+    padding: 0 15px 0 15px;
+}
+#carrou_image #carrou_imageDiv{/*div de l'image du carrou*/
+    width: 200px;
+    /*z-index: 1000; test 24/03*/
+    position: relative;
+}
+/* 2 boutons à faire !! */
+/* 
+#mainbutton {
+    display: grid; cf ligne 37 de nb.css - grid container qui contient les grid items - logo nb + titre + menu hamburger - ajout de la grille d'éléments pour les disposer en vis à vis
+    grid-template-columns: 1fr 1fr ;
+    justify-content: center;
+    }
+ */ 
+
+ .centered {
+    height: 20%;
+    justify-content: center;
+    position: fixed;
+    bottom: 0%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0px auto;
+    left: 0;
+    right: 0;
+}
+
+button { /* Boutons homepage */ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border: 2px solid white;
+    background-color: transparent;
+    width: 2em;
+    /* height: 2em; */
+    /* TOM */
+    /* border-radius: 100%; */
+    border-radius: 10px;
+    font-size: 2em;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    outline: none;
+}
+
+.instructions {
+    position: fixed;
+    top: 5%;
+    font-size: 1.25em;
+    color: white;
+    z-index: 999999;
+    text-decoration: none;
+}
+.buttonOk, .buttonForward {
+    /* TOM */
+    /* margin-bottom: 40px; */
+    color: var(--white);
+    background-color: var(--yellow);
+    /* padding-top: 5px; */
+    font-size: 18px;
+    width: 45%;
+    padding: 5px 2px;
+
+    /* display: inline-block; */
+    /* justify-content: center; */
+}
+#homeFooter{
+    /*background-color: var(--red); texte : j'ai compris */
+    /* background-image: url(../assets/img/Fleche_retour.png) cover no-repeat fixed; */
+    /*height: 40px;
+    width: 100%;
+    bottom: 0;
+    color: var(--white);
+    font-size: .5em;
+        display: grid;
+        grid-template-columns: 110px 1fr 40px;*/
+        /* TOM */
+    padding: 0 20px;
+    display: flex;
+    /* align-items: left; */
+    justify-content: center;
+    margin-top: 230px;
+    /* position: fixed; */
+}
+
+#inverse { /* bouton page carte */
+    width: 200px;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    justify-content: center;
+    background-color: var(--yellow);
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    outline: none;
+}
+/*ENTETES & PIED DE PAGE DES PAGES SUIVANTES */
+
+#mainHeader{
+    /*background-color: var(--red);*/
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: 110px 1fr 40px;/*1ère col : 80px pour la largeur du logo 
+    2ème col : 1 fraction ie = le reste de la largeur selon la largeur de l'écran 
+    3ème col : 40px de largeur du bouton menu toggle hamburger*/
+}
+#mainHeader > h1{
+    margin: 0;/*neutralisation des marges mises par défaut pour finaliser l'alignement vertical*/
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 1em;
+    height: 40px; /*affectation de la même hauteur que celle de l'entete mainheader pour neutraliser les marges affectées par défaut par les navigateurs aux h1 pour finaliser l'alignement vertical du titre */
+    display: flex;
+    align-items: center;/* alignement vertical du titre*/
+}
+#logoImg{/*logo mainHeader à gauche*/
+    width: 110px; 
+    padding: 5px;
+    z-index: 1000;
+    position: relative;
+}
+#mainNav{
+    position: absolute;
+    /*background-color: var(--red);*/
+    width: 100%;
+    top: 10px;
+    padding-bottom: 10px;
+    display: none;
+}
+#mainNav ul{/* formatage de la liste des libellés de la barre de menu */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;/*ul mis en flex pour affichage en ligne des li les uns après les autres */
+    flex-flow: column; /* placement des éléments en colonne avec flex-direction: column*/
+
+}
+#mainNav a{/* formatage du texte des libellés du menu */
+    color: var(--white);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    display: block;
+    padding-left: 400px;
+}
+#mainNav a:hover{
+    color: var(--shaded-red);
+    background-color: white;
+}
+#menuToggle{
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    height: 50px;
+}
+#pageContent {
+    height: 100%;
+    padding: 100px 20px;
+    min-height: 90vh;
+    background-color: #121212 / cover no-repeat fixed;
+}
+#pageContent h1 {
+    font-size: 1.8em;
+    color: var(--yellow);
+    letter-spacing: .1em;
+}
+main {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px;
+}
+/* 2. CONTENU PAGE MENU */
+
+#titre_menu {/*box dans laquelle le titre menu L aventure continue est intégré*/
+    width: 100%;
+    height: 150px;
+    top: 40px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;/*placer au centre de la fenêtre*/
+    position: relative;
+    padding: 0 15px 0 15px;
+}
+#titre_menu #tit_menu{/*div avec h1 du titre du menu*/
+    width: 400px;
+    z-index: 1000;
+    position: relative;
+}
+#titre_menu #tit_menu h1{/* texte titre du menu*/
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--yellow);
+    font-size: 1.6em ;
+    margin: 40px 15px;/* test 15 vs 40px* 24/03*/
+    text-align: center;
+}
+
+.menu { /* regroupement des 2 accès sous 1 seul élément */
+    width: 400px;
+    color: var(--yellow);
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px auto 20px auto;
+    display: block;
+    text-decoration: none;
+}
+
+.menu.first {
+    margin-top: 30px;
+}
+
+.menu_logos { /* encadré du quatuor logos fictifs */
+    width: 400px;
+    color: var(--yellow);
+    text-align: center;
+    margin: 50px auto 20px auto;
+    display: block;
+}
+#bande_pictos_menu {
+    width: 160px;    
+}
+
+/* CARTE WAYPOINTS + filtres 1/2 col de gauche */
+#pageContent.twoCol {/*création d'une nouvelle class pour manipuler l'agencement d'éléments à mettre en colonne leftcol et rightcol*/
+    display: grid;
+    grid-gap: 20px;
+}
+#pageContent.filtres_twoCol #leftCol {
+    display: grid;
+    grid-gap: 20px;
+}
+#pageContent.filtres_twoCol #leftCol article{
+    padding: 20px;
+}
+#pageContent.filtres_twoCol #leftCol article:nth-child(odd){
+    background-color: var(--b);
+}
+
+/*page carte et filtres 2/2 col de droite */
+#pageContent.filtres_twoCol #rightCol{
+    background-color: var(--black);
+    padding: 20px;
+}
+#pageContent.filtres_twoCol #rightCol section{
+    border-bottom: 1px solid var(--white);
+    padding-bottom: 20px;
+}
+/* formatage titre Je choisis à débuguer...= fait partiellement = retrait text-decoration HS !*/
+#pageContent.filtres_twoCol.titreH1 #choixFiltres > h1{
+    color: var(--yellow);
+    font-size: 1.7em;
+    text-decoration: none;
+}
+#pageContent.filtres_twoCol #rightCol section > h1 {
+    color: var(--yellow);
+    font-size: 1.3em;
+    padding: 5px;
+    display: flex;/*transformation des <a> en container flex afin de pouvoir améliorier le rendu des nb de documents en rond rouge*/
+    justify-content: space-between;/*afin que l'espace restant se situe entre les 2 éléments : le texte et le span - "genres et le span "2"*/
+}
+
+#pageContent.filtres_twoCol #rightCol section > h1 span {
+    width: 30px;
+    border-radius: 50%;
+    background-color: var(--white);
+    color: var(--white);
+    display: flex;/*transformer les span en flex box pour gérer leur affichage en ajoutant également le justify content pour le centrage horizontal et l'alig-item pour celui à la verticale*/
+    justify-content: center;/*centrage horizontal*/
+    align-items: center;/*centrage vertical du nb*/
+}
+#chevron_carte {
+    width: 32px;
+}
+#pageContent.filtres_twoCol #rightCol ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#pageContent.filtres_twoCol #rightCol ul li{
+    background-color: var(--white);
+}
+
+#pageContent.filtres_twoCol #rightCol ul li:nth-child(even){
+    background-color: var(--tWhite);
+}
+#pageContent.filtres_twoCol #rightCol li a {
+    color: var(--black);
+    text-decoration: none;
+    padding: 5px;
+    display: flex;/*transformation des <a> en container flex afin de pouvoir améliorier le rendu des nb de documents en rond rouge*/
+    justify-content: space-between;/*afin que l'espace restant se situe entre les 2 éléments : le texte et le span - "genres et le span "2"*/
+}
+#pageContent.filtres_twoCol #rightCol li a span {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    border-radius: 50%;
+    color: var(--black);
+    display: flex;/*transformer les span en flex box pour gérer leur affichage en ajoutant également le justify content pour le centrage horizontal et l'alig-item pour celui à la verticale*/
+    justify-content: center;/*centrage horizontal*/
+    align-items: center;/*centrage vertical du nb*/
+}
+#pageContent.filtres_twoCol #rightCol li a:hover {
+    background-color: var(--shaded-red);
+    color: var(--white)
+}
+#pageContent.filtres_twoCol #rightCol li a:hover span {
+    background-color: var(--white);
+    color: var(--red);
+}
+#pageContent.filtres_twoCol #rightCol ul li:first-child, #pageContent.filtres_twoCol #rightCol ul li:first-child a:hover {
+    border-radius: 10px 10px 0 0;
+}
+#pageContent.filtres_twoCol #rightCol ul li:last-child, #pageContent.filtres_twoCol #rightCol ul li:last-child a:hover {
+    border-radius: 0 0 10px 10px;
+}
+
+#mainFooter{
+    /*background-color: var(--red);*/
+    background-image: url(../assets/img/fleche_retour.png) / cover no-repeat fixed;
+    /*height: 40px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    color: var(--white);
+    font-size: .5em;*/
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    /* TOM */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+#flecheback {
+    width: 40px;
+    padding: 10px;
+    z-index: 1000;
+    position: relative;
+}
+/* PAGE CHOIX SCENE */ 
+
+#scene {/*box dans laquelle le mainIntro est intégré*/
+    width: 100%;
+    height: 150px;
+    top: 80px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;/*placer au centre de la fenêtre*/
+    position: relative;
+    padding: 0 15px 0 15px;
+}
+#texte_scene{/*div avec h1 et p du du Bravo !*/
+    width: 400px;
+    z-index: 1000;
+    position: relative;
+}
+#texte_scene h1{/* texte d'intro "Bravo..."*/
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--yellow);
+    text-align: center;
+    font-size: 1.2em ;
+    margin: 10px 0;
+}
+#texte_scene #nom_marker {
+    margin: 3px 0 5px 0;
+    font-size: 1em;
+    text-align: center;
+    color: #FFF;
+}
+#texte_scene #action {
+    font-size: 1.2em;
+    margin: 20px 0 15px 0;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    color: var(--yellow);
+}
+
+.choix { /* regroupement des 2 a href sous 1 seul élément */
+    width: 400px;
+    color: var(--yellow);
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px auto 20px auto;
+    display: block;
+    text-decoration: none;
+}
+
+.choix.first {
+    margin-top: 100px;
+}
+
+
+
+/* PAGE MONTAGE */ 
+/* test ajout css empilage au dessus de tous les éléments img_gltf... = ça ne fait pas tjrs pas apparaître pour autant l'image => retrait suite retour d'Aurélien
+.img_gltf {
+    z-index: 9999;
+}*/
+/* test interaction user stoppé suite bug d'affichage de l'image */
+
+
+/* CARTES WAYPOINTS CHECKBOX */
+
+#container {
+  height: 100%;
+  display: flex;
+}
+
+#sidebar {
+  flex-basis: 15rem;
+  flex-grow: 1;
+  padding: 1rem;
+  max-width: 30rem;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+#map {
+  flex-basis: 0;
+  flex-grow: 4;
+  height: 100%;
+}
+
+#directions-panel {
+  margin-top: 10px;
+}
+
+
+@media screen and (min-width: 768px){
+    #menuToggle{
+        display: none;
+    }
+    #mainHeader.home{
+        grid-template-columns: 100px 1fr;
+    }
+    #mainHeader.home #mainNav ul{ /* lignes doublée pour .home car le mainNav home ul s'affichait en colonne et centrée et non sur une row */ 
+        flex-direction: row;/*ns indiquons au container flex ul que la direction du côte à côte doit être faite en ligne pour les écrans à partir de 768px*/
+        justify-content: flex-end;/*flex-end permet d'afficher les liens container à la fin du container flex mais ils sont tous collés entre eux sans espace / flex-start = affiche les items li complètement à gauche, au début du flex également tous collés entre eux sans espace / space around = permet de répartir l'espace autour de chaque li à droit et à gauche = meilleure affichage*/
+        height: 15px;
+        align-items: center; /*centrage horizontal*/
+        text-align: center;/* centrage vertical*/
+    }
+    #mainHeader{
+        grid-template-columns: 110px 150px 1fr;
+    }
+    #mainNav{
+        position: static;
+        display: block ;/* !important*/ 
+    }
+    #mainNav ul{
+        flex-direction: row;/*ns indiquons au container flex ul que la direction du côte à côte doit être faite en ligne pour les écrans à partir de 768px*/
+        justify-content: flex-end;/*flex-end permet d'afficher les liens container à la fin du container flex mais ils sont tous collés entre eux sans espace / flex-start = affiche les items li complètement à gauche, au début du flex également tous collés entre eux sans espace / space around = permet de répartir l'espace autour de chaque li à droit et à gauche = meilleure affichage*/
+        height: 40px;
+        align-items: center; /*centrage horizontal*/
+        text-align: center;/* centrage vertical*/
+    }
+    #mainNav a{
+        font-size: 0.8;
+        padding: 0 10px;
+    }   
+    #pageContent{
+        justify-content: flex-end;
+    }
+}
+@media screen and (min-width: 1024px){
+    #mainHeader {
+        grid-template-columns: 110px 100px 1fr ;/*les 2 dernières colonnes vont occuper à part égale l'espace restant au lieu de noter 110px 1fr 1fr*/
+    }
+    #mainHeader > h1{
+        font-size: 0.8em;
+    }
+    #pageContent.twoCol {
+        grid-template-columns: 2fr 1fr;/* 2 colonnes dont la 1ère fera 2/3 de l'espace et la 2ème colonne 1/3 de l'espace restant */
+    }
+}
+@media screen and (min-width: 1200px){
+        #menuToggle {
+            display: none;
+        }
+        #mainHeader {
+            grid-template-columns: 110px 100px 1fr ;
+        }
+        #pageContent.twoCol {
+            grid-template-columns: 3fr 1fr;/* 2 colonnes dont la 1ère fera 3/4 de l'espace et la 2ème colonne 1/4 de l'espace restant */
+        }
+}
