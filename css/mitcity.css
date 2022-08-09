@@ -116,22 +116,21 @@ img {
 #mainIntro.home #texte_intro h1{/* texte d'intro "Un film culte..." sous le logo*/
     font-family: Arial, Helvetica, sans-serif;
     color: var(--yellow);
-    font-size: 1.8em ;
+    font-size: 1.6em ;
     margin: 10px 50px;
     text-align: center;
 }
 #mainIntro.home #texte_intro p{
-    margin: 10px 0;
     font-size: 1em;
     color: #FFF;
     text-align: justify;
-    margin: 10px 30px;
+    margin: 20px 30px 10px 30px;
 }
 
 #carrou_image {/*box dans laquelle l'image du carrousel est intégré*/
     width: 100%;
     height: 150px;
-    top: 120px;
+    top: 100px;
     z-index: 1000;
     display: flex;
     justify-content: center;/*placer au centre de la fenêtre*/
@@ -188,7 +187,6 @@ button { /* Boutons homepage */
     font-size: 1.25em;
     color: white;
     z-index: 999999;
-    text-decoration: none;
 }
 .buttonOk, .buttonForward {
     /* TOM */
@@ -199,6 +197,7 @@ button { /* Boutons homepage */
     font-size: 18px;
     width: 45%;
     padding: 5px 2px;
+    text-decoration: none;
 
     /* display: inline-block; */
     /* justify-content: center; */
@@ -218,8 +217,15 @@ button { /* Boutons homepage */
     display: flex;
     /* align-items: left; */
     justify-content: center;
-    margin-top: 230px;
+    margin-top: 170px;
     /* position: fixed; */
+}
+/* formatage titre "ok go !" avec retrait surlignement sur le a !*/
+#homeFooter a {
+    color: white;
+    font-size: 20px;
+    font-weight:bold;
+    text-decoration: none;
 }
 
 #inverse { /* bouton page carte */
@@ -389,10 +395,8 @@ main {
     border-bottom: 1px solid var(--white);
     padding-bottom: 20px;
 }
-/* formatage titre Je choisis à débuguer...= fait partiellement = retrait text-decoration HS !*/
-#pageContent.filtres_twoCol.titreH1 #choixFiltres > h1{
-    color: var(--yellow);
-    font-size: 1.7em;
+/* formatage titre "Je choisis" avec retrait surlignement sur le a !*/
+#pageContent.filtres_twoCol #choixFiltres.titreH1 a{
     text-decoration: none;
 }
 #pageContent.filtres_twoCol #rightCol section > h1 {
