@@ -28,7 +28,7 @@ img {
     left: -15000px;
 }*/
 
-/* 1. WELCOME HOME PAGE*/
+/* ************ 1. WELCOME HOME PAGE *********** */
 
 #mainHeader.home{
     /*background-color: var(--red);*/
@@ -240,8 +240,7 @@ button { /* Boutons homepage */
     color: white;
     outline: none;
 }
-/*ENTETES & PIED DE PAGE DES PAGES SUIVANTES */
-
+/* ********** 2. ENTETE & PIED DE PAGE DES PAGES SUIVANTES ********* */
 #mainHeader{
     /*background-color: var(--red);*/
     height: 40px;
@@ -319,7 +318,8 @@ main {
     background-color: rgba(0, 0, 0, 0);
     padding: 20px;
 }
-/* 2. CONTENU PAGE MENU */
+
+/* ********** 3. CONTENU PAGE MENU ********* */
 
 #titre_menu {/*box dans laquelle le titre menu L aventure continue est intégré*/
     width: 100%;
@@ -369,37 +369,59 @@ main {
 #bande_pictos_menu {
     width: 160px;    
 }
+/* ********** 4. CARTE WAYPOINTS + filtres 1/2 col de gauche ********* */
 
-/* CARTE WAYPOINTS + filtres 1/2 col de gauche */
+/* 4.1 page carte et filtres col de gauche #leftCol */
 #pageContent.twoCol {/*création d'une nouvelle class pour manipuler l'agencement d'éléments à mettre en colonne leftcol et rightcol*/
     display: grid;
     grid-gap: 20px;
 }
-#pageContent.filtres_twoCol #leftCol {
+#pageContent.filtres_twoCol #rightCol {
     display: grid;
     grid-gap: 20px;
 }
-#pageContent.filtres_twoCol #leftCol article{
+#pageContent.filtres_twoCol #rightCol article{
     padding: 20px;
 }
-#pageContent.filtres_twoCol #leftCol article:nth-child(odd){
+#pageContent.filtres_twoCol #rightCol article:nth-child(odd){
     background-color: var(--b);
 }
+#container {
+    height: 100%;
+    display: flex;
+}
+#sidebar {
+    flex-basis: 15rem;
+    flex-grow: 1;
+    padding: 1rem;
+    max-width: 30rem;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+}
+#map {
+    flex-basis: 0;
+    flex-grow: 4;
+    height: 100%;
+}
+#directions-panel {
+    margin-top: 10px;
+}
 
-/*page carte et filtres 2/2 col de droite */
-#pageContent.filtres_twoCol #rightCol{
+/*4.2 page carte et filtres 2/2 col de droite rightCol */
+#pageContent.filtres_twoCol #leftCol{
     background-color: var(--black);
     padding: 20px;
 }
-#pageContent.filtres_twoCol #rightCol section{
+#pageContent.filtres_twoCol #leftCol section{
     border-bottom: 1px solid var(--white);
     padding-bottom: 20px;
 }
-/* formatage titre "Je choisis" avec retrait surlignement sur le a !*/
+/* 4.2.1 formatage titre "Je choisis" avec retrait surlignement sur le a !*/
 #pageContent.filtres_twoCol #choixFiltres.titreH1 a{
     text-decoration: none;
 }
-#pageContent.filtres_twoCol #rightCol section > h1 {
+#pageContent.filtres_twoCol #leftCol section > h1 {
     color: var(--yellow);
     font-size: 1.3em;
     padding: 5px;
@@ -407,7 +429,7 @@ main {
     justify-content: space-between;/*afin que l'espace restant se situe entre les 2 éléments : le texte et le span - "genres et le span "2"*/
 }
 
-#pageContent.filtres_twoCol #rightCol section > h1 span {
+#pageContent.filtres_twoCol #leftCol section > h1 span {
     width: 30px;
     border-radius: 50%;
     background-color: var(--white);
@@ -419,26 +441,26 @@ main {
 #chevron_carte {
     width: 32px;
 }
-#pageContent.filtres_twoCol #rightCol ul{
+#pageContent.filtres_twoCol #leftCol ul{
     list-style: none;
     padding: 0;
     margin: 0;
 }
-#pageContent.filtres_twoCol #rightCol ul li{
+#pageContent.filtres_twoCol #leftCol ul li{
     background-color: var(--white);
 }
 
-#pageContent.filtres_twoCol #rightCol ul li:nth-child(even){
+#pageContent.filtres_twoCol #leftCol ul li:nth-child(even){
     background-color: var(--tWhite);
 }
-#pageContent.filtres_twoCol #rightCol li a {
+#pageContent.filtres_twoCol #leftCol li a {
     color: var(--black);
     text-decoration: none;
     padding: 5px;
     display: flex;/*transformation des <a> en container flex afin de pouvoir améliorier le rendu des nb de documents en rond rouge*/
     justify-content: space-between;/*afin que l'espace restant se situe entre les 2 éléments : le texte et le span - "genres et le span "2"*/
 }
-#pageContent.filtres_twoCol #rightCol li a span {
+#pageContent.filtres_twoCol #leftCol li a span {
     width: 20px;
     height: 20px;
     font-size: 12px;
@@ -448,21 +470,21 @@ main {
     justify-content: center;/*centrage horizontal*/
     align-items: center;/*centrage vertical du nb*/
 }
-#pageContent.filtres_twoCol #rightCol li a:hover {
+#pageContent.filtres_twoCol #leftCol li a:hover {
     background-color: var(--shaded-red);
     color: var(--white)
 }
-#pageContent.filtres_twoCol #rightCol li a:hover span {
+#pageContent.filtres_twoCol #leftCol li a:hover span {
     background-color: var(--white);
     color: var(--red);
 }
-#pageContent.filtres_twoCol #rightCol ul li:first-child, #pageContent.filtres_twoCol #rightCol ul li:first-child a:hover {
+#pageContent.filtres_twoCol #leftCol ul li:first-child, #pageContent.filtres_twoCol #rightCol ul li:first-child a:hover {
     border-radius: 10px 10px 0 0;
 }
-#pageContent.filtres_twoCol #rightCol ul li:last-child, #pageContent.filtres_twoCol #rightCol ul li:last-child a:hover {
+#pageContent.filtres_twoCol #leftCol ul li:last-child, #pageContent.filtres_twoCol #rightCol ul li:last-child a:hover {
     border-radius: 0 0 10px 10px;
 }
-
+/* 4.3 Footer */
 #mainFooter{
     /*background-color: var(--red);*/
     background-image: url(../assets/img/fleche_retour.png) / cover no-repeat fixed;
@@ -488,7 +510,8 @@ main {
     z-index: 1000;
     position: relative;
 }
-/* PAGE CHOIX SCENE */ 
+
+/* ********** 5. PAGE CHOIX SCENE ********* */
 
 #scene {/*box dans laquelle le mainIntro est intégré*/
     width: 100%;
@@ -542,42 +565,12 @@ main {
     margin-top: 100px;
 }
 
-
-
 /* PAGE MONTAGE */ 
-/* test ajout css empilage au dessus de tous les éléments img_gltf... = ça ne fait pas tjrs pas apparaître pour autant l'image => retrait suite retour d'Aurélien
+/* test ajout css empilage au dessus de tous les éléments img_gltf... = ça ne fait tjrs pas apparaître pour autant l'image => retrait suite retour d'Aurélien
 .img_gltf {
     z-index: 9999;
 }*/
 /* test interaction user stoppé suite bug d'affichage de l'image */
-
-
-/* CARTES WAYPOINTS CHECKBOX */
-
-#container {
-  height: 100%;
-  display: flex;
-}
-
-#sidebar {
-  flex-basis: 15rem;
-  flex-grow: 1;
-  padding: 1rem;
-  max-width: 30rem;
-  height: 100%;
-  box-sizing: border-box;
-  overflow: auto;
-}
-
-#map {
-  flex-basis: 0;
-  flex-grow: 4;
-  height: 100%;
-}
-
-#directions-panel {
-  margin-top: 10px;
-}
 
 
 @media screen and (min-width: 768px){
